@@ -1,0 +1,10 @@
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\SRLOCSistema.exe.config
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\SRLOCSistema.exe
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\SRLOCSistema.pdb
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.csprojAssemblyReference.cache
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.SRLOC.resources
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.Properties.Resources.resources
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.csproj.GenerateResource.cache
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.csproj.CoreCompileInputs.cache
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.exe
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.pdb
