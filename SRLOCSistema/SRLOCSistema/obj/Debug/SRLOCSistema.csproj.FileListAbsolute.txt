@@ -30,3 +30,15 @@ A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\System
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.csproj.CopyComplete
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.View.CadastroItem.resources
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.View.CadastroComodo.resources
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\EntityFramework.dll
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\EntityFramework.SqlServer.dll
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\System.Data.SQLite.dll
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\System.Data.SQLite.EF6.dll
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\System.Data.SQLite.Linq.dll
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\EntityFramework.xml
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\EntityFramework.SqlServer.xml
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\System.Data.SQLite.xml
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\System.Data.SQLite.dll.config
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.View.CadastroComodo.resources
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.View.CadastroItem.resources
+D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.csproj.CopyComplete
