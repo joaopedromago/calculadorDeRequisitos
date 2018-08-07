@@ -16,12 +16,12 @@ namespace SRLOCSistema
 	public partial class SRLOC : Form
 	{
 		public Calculo _calculo;
-        public DataTable comodos;
-        public DataTable itens;
-        public List<Comodo> listaComodo;
-        public List<Item> listaItem;
+		public DataTable comodos;
+		public DataTable itens;
+		public List<Comodo> listaComodo;
+		public List<Item> listaItem;
 
-        public SRLOC()
+		public SRLOC()
 		{
 			_calculo = new Calculo();
 			InitializeComponent();
@@ -51,11 +51,6 @@ namespace SRLOCSistema
 			CarregarGrids();
 		}
 
-		private void GerarExcel_Click(object sender, EventArgs e)
-		{
-
-		}
-
 		public void CarregarGrids()
 		{
 			try
@@ -66,9 +61,6 @@ namespace SRLOCSistema
 				comodos = comodoControler.ObterComodos();
 				itens = itemController.ObterItens();
 
-				listaComodo = comodoControler.TransformarDataTable(comodos);
-				listaItem = itemController.TransformarDataTable(itens);
-
 				comodos.Columns.Remove("DATACRIACAO");
 				itens.Columns.Remove("DATACRIACAO");
 
@@ -78,6 +70,8 @@ namespace SRLOCSistema
 
 				comodos.Columns["ID"].SetOrdinal(comodos.Columns.Count - 1);
 				itens.Columns["ID"].SetOrdinal(itens.Columns.Count - 1);
+				comodos.Columns["ID"].ReadOnly = true;
+				itens.Columns["ID"].ReadOnly = true;
 
 				itens.Columns["NOME"].ColumnName = "Nome";
 				itens.Columns["COMPRIMENTO"].ColumnName = "Comprimento";
@@ -87,8 +81,6 @@ namespace SRLOCSistema
 
 				gridComodos.DataSource = comodos;
 				gridItens.DataSource = itens;
-
-				_calculo.EfetuarCalculo(listaItem, listaComodo);
 
 				PreencherDadosResultado();
 			}
@@ -100,7 +92,13 @@ namespace SRLOCSistema
 
 		public void PreencherDadosResultado()
 		{
+			var comodoControler = new ComodoController();
+			var itemController = new ItemController();
 
+			listaComodo = comodoControler.ObterListaComodos();
+			listaItem = itemController.ObterListaItens();
+
+			_calculo.EfetuarCalculo(listaItem, listaComodo);
 		}
 
 		private void gridItens_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -110,58 +108,104 @@ namespace SRLOCSistema
 			//var index = this.gridItens.SelectedRows[0].Index;
 		}
 
-        private void gridItens_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            atualizarItem();
-            PreencherDadosResultado();
-        }
+		private void gridItens_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+		{
+			atualizarItem();
+			PreencherDadosResultado();
+		}
 
-        private void gridComodos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            atualizarComodo();
-            PreencherDadosResultado();
-        }
+		private void gridComodos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+		{
+			atualizarComodo();
+			PreencherDadosResultado();
+		}
 
-        public void atualizarComodo()
-        {
-            var comodo = new Comodo();
-            var controller = new ComodoController();
+		public void atualizarComodo()
+		{
+			var comodo = new Comodo();
+			var controller = new ComodoController();
 
-            var index = gridComodos.CurrentCell.RowIndex;
-            var id = gridComodos.Rows[index].Cells["ID"].Value.ToString();
-            var nome = gridComodos.Rows[index].Cells["Nome"].Value.ToString();
-            var largura = gridComodos.Rows[index].Cells["Comprimento"].Value.ToString();
-            var comprimento = gridComodos.Rows[index].Cells["Largura"].Value.ToString();
+			var index = gridComodos.CurrentCell.RowIndex;
+			var id = gridComodos.Rows[index].Cells["ID"].Value.ToString();
+			var nome = gridComodos.Rows[index].Cells["Nome"].Value.ToString();
+			var largura = gridComodos.Rows[index].Cells["Comprimento"].Value.ToString();
+			var comprimento = gridComodos.Rows[index].Cells["Largura"].Value.ToString();
 
-            comodo.Id = int.Parse(id);
-            comodo.Nome = nome;
-            comodo.Largura = double.Parse(largura);
-            comodo.Comprimento = double.Parse(comprimento);
-            
-            controller.AtualizarComodo(comodo);
-        }
+			int aux;
+			if (!int.TryParse(id, out aux))
+			{
+				return;
+			}
+			comodo.Id = int.Parse(id);
+			comodo.ValidarCampos(nome, largura, comprimento);
 
-        public void atualizarItem()
-        {
-            var item = new Item();
-            var controller = new ItemController();
+			controller.AtualizarComodo(comodo);
+		}
 
-            var index = gridItens.CurrentCell.RowIndex;
-            var id = gridItens.Rows[index].Cells["ID"].Value.ToString();
-            var nome = gridItens.Rows[index].Cells["Nome"].Value.ToString();
-            var largura = gridItens.Rows[index].Cells["Comprimento"].Value.ToString();
-            var comprimento = gridItens.Rows[index].Cells["Largura"].Value.ToString();
-            var larguraEspacamento = gridItens.Rows[index].Cells["Comprimento espaçamento"].Value.ToString();
-            var comprimentoEspacamento = gridItens.Rows[index].Cells["Largura espaçamento"].Value.ToString();
+		public void atualizarItem()
+		{
+			var item = new Item();
+			var controller = new ItemController();
 
-            item.Id = int.Parse(id);
-            item.Nome = nome;
-            item.Largura = double.Parse(largura);
-            item.Comprimento = double.Parse(comprimento);
-            item.LarguraEspacamento = double.Parse(larguraEspacamento);
-            item.ComprimentoEspacamento = double.Parse(comprimentoEspacamento);
-            
-            controller.AtualizarItem(item);
-        }
-    }
+			var index = gridItens.CurrentCell.RowIndex;
+			var id = gridItens.Rows[index].Cells["ID"].Value.ToString();
+			var nome = gridItens.Rows[index].Cells["Nome"].Value.ToString();
+			var largura = gridItens.Rows[index].Cells["Comprimento"].Value.ToString();
+			var comprimento = gridItens.Rows[index].Cells["Largura"].Value.ToString();
+			var larguraEspacamento = gridItens.Rows[index].Cells["Comprimento espaçamento"].Value.ToString();
+			var comprimentoEspacamento = gridItens.Rows[index].Cells["Largura espaçamento"].Value.ToString();
+
+			int aux;
+			if(!int.TryParse(id, out aux))
+			{
+				return;
+			}
+			item.Id = int.Parse(id);
+			item.ValidarCampos(nome, largura, comprimento, larguraEspacamento, comprimentoEspacamento);
+
+			controller.AtualizarItem(item);
+		}
+
+		private void btnGerarTxt_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void GerarExcel_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void excluirItem_Click(object sender, EventArgs e)
+		{
+			var controller = new ItemController();
+
+			var index = gridItens.CurrentCell?.RowIndex ?? null;
+			if (index == null)
+			{
+				return;
+			}
+			var id = gridItens.Rows[(int)index].Cells["ID"].Value.ToString();
+
+			controller.ExcluirItem(int.Parse(id));
+
+			CarregarGrids();
+		}
+
+		private void excluirComodo_Click(object sender, EventArgs e)
+		{
+			var controller = new ComodoController();
+
+			var index = gridComodos.CurrentCell?.RowIndex ?? null;
+			if (index == null)
+			{
+				return;
+			}
+			var id = gridComodos.Rows[(int)index].Cells["ID"].Value.ToString();
+
+			controller.ExcluirComodo(int.Parse(id));
+
+			CarregarGrids();
+		}
+	}
 }

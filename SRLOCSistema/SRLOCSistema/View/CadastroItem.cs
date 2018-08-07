@@ -26,11 +26,7 @@ namespace SRLOCSistema.View
 
 			var itemController = new ItemController();
 
-			item.Nome = txtNome.Text;
-			item.Comprimento = double.Parse(numComprimentoEspacamento.Text.ToString());
-			item.Largura = double.Parse(numLarguraEspacamento.Text.ToString());
-			item.ComprimentoEspacamento = double.Parse(numLarguraEspacamento.Text.ToString());
-			item.LarguraEspacamento = double.Parse(numComprimentoEspacamento.Text.ToString());
+			item.ValidarCampos(txtNome.Text, numLargura.Text, numComprimento.Text, numLarguraEspacamento.Text, numComprimentoEspacamento.Text);
 
 			itemController.CadastrarItem(item);
 
@@ -67,6 +63,11 @@ namespace SRLOCSistema.View
 			{
 				e.Handled = true;
 			}
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			this.Close();
 		}
 	}
 }

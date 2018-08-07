@@ -40,6 +40,7 @@
 			this.numComprimentoEspacamento = new System.Windows.Forms.TextBox();
 			this.numLargura = new System.Windows.Forms.TextBox();
 			this.numComprimento = new System.Windows.Forms.TextBox();
+			this.button1 = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -47,6 +48,7 @@
 			// 
 			this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
 			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panel1.Controls.Add(this.button1);
 			this.panel1.Controls.Add(this.CadastrarItem);
 			this.panel1.Location = new System.Drawing.Point(16, 361);
 			this.panel1.Name = "panel1";
@@ -170,6 +172,20 @@
 			this.numComprimento.Text = "0";
 			this.numComprimento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numComprimento_KeyPress);
 			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.LightCoral;
+			this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.button1.Location = new System.Drawing.Point(332, 41);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(122, 45);
+			this.button1.TabIndex = 39;
+			this.button1.Text = "Cancelar";
+			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
 			// CadastroItem
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,5 +227,6 @@
 		private System.Windows.Forms.TextBox numComprimentoEspacamento;
 		private System.Windows.Forms.TextBox numLargura;
 		private System.Windows.Forms.TextBox numComprimento;
+		private System.Windows.Forms.Button button1;
 	}
 }

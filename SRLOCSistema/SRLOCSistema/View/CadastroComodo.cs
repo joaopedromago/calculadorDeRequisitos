@@ -26,9 +26,7 @@ namespace SRLOCSistema.View
 
 			var comodoController = new ComodoController();
 
-			comodo.Nome = txtNome.Text;
-			comodo.Comprimento = double.Parse(numComprimento.Text.ToString());
-			comodo.Largura = double.Parse(numLargura.Text.ToString());
+			comodo.ValidarCampos(txtNome.Text, numLargura.Text, numComprimento.Text);
 
 			comodoController.CadastrarComodo(comodo);
 		}
@@ -47,6 +45,11 @@ namespace SRLOCSistema.View
 			{
 				e.Handled = true;
 			}
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			this.Close();
 		}
 	}
 }
