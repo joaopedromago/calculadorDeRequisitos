@@ -1,4 +1,5 @@
-﻿using SRLOCSistema.Controller;
+﻿using FastMember;
+using SRLOCSistema.Controller;
 using SRLOCSistema.Model;
 using SRLOCSistema.View;
 using System;
@@ -13,199 +14,230 @@ using System.Windows.Forms;
 
 namespace SRLOCSistema
 {
-	public partial class SRLOC : Form
-	{
-		public Calculo _calculo;
-		public DataTable comodos;
-		public DataTable itens;
-		public List<Comodo> listaComodo;
-		public List<Item> listaItem;
+    public partial class SRLOC : Form
+    {
+        public Calculo _calculo;
+        public DataTable comodos;
+        public DataTable itens;
+        public List<Comodo> listaComodo;
+        public List<Item> listaItem;
 
-		public SRLOC()
-		{
-			_calculo = new Calculo();
-			InitializeComponent();
-		}
+        public SRLOC()
+        {
+            _calculo = new Calculo();
+            InitializeComponent();
+        }
 
-		private void SRLOC_Enter(object sender, EventArgs e)
-		{
-			CarregarGrids();
-		}
+        private void SRLOC_Enter(object sender, EventArgs e)
+        {
+            CarregarGrids();
+        }
 
-		private void SRLOC_Load(object sender, EventArgs e)
-		{
-			CarregarGrids();
-		}
+        private void SRLOC_Load(object sender, EventArgs e)
+        {
+            CarregarGrids();
+        }
 
-		private void CadastrarComodo_Click(object sender, EventArgs e)
-		{
-			var obj = new CadastroComodo();
-			obj.ShowDialog();
-			CarregarGrids();
-		}
+        private void CadastrarComodo_Click(object sender, EventArgs e)
+        {
+            var obj = new CadastroComodo();
+            obj.ShowDialog();
+            CarregarGrids();
+        }
 
-		private void CadastrarItem_Click(object sender, EventArgs e)
-		{
-			var obj = new CadastroItem();
-			obj.ShowDialog();
-			CarregarGrids();
-		}
+        private void CadastrarItem_Click(object sender, EventArgs e)
+        {
+            var obj = new CadastroItem();
+            obj.ShowDialog();
+            CarregarGrids();
+        }
 
-		public void CarregarGrids()
-		{
-			try
-			{
-				var comodoControler = new ComodoController();
-				var itemController = new ItemController();
+        public void CarregarGrids()
+        {
+            try
+            {
+                var comodoControler = new ComodoController();
+                var itemController = new ItemController();
 
-				comodos = comodoControler.ObterComodos();
-				itens = itemController.ObterItens();
+                comodos = comodoControler.ObterComodos();
+                itens = itemController.ObterItens();
 
-				comodos.Columns.Remove("DATACRIACAO");
-				itens.Columns.Remove("DATACRIACAO");
+                comodos.Columns.Remove("DATACRIACAO");
+                itens.Columns.Remove("DATACRIACAO");
 
-				comodos.Columns["NOME"].ColumnName = "Nome";
-				comodos.Columns["COMPRIMENTO"].ColumnName = "Comprimento";
-				comodos.Columns["LARGURA"].ColumnName = "Largura";
+                comodos.Columns["NOME"].ColumnName = "Nome";
+                comodos.Columns["COMPRIMENTO"].ColumnName = "Comprimento";
+                comodos.Columns["LARGURA"].ColumnName = "Largura";
 
-				comodos.Columns["ID"].SetOrdinal(comodos.Columns.Count - 1);
-				itens.Columns["ID"].SetOrdinal(itens.Columns.Count - 1);
-				comodos.Columns["ID"].ReadOnly = true;
-				itens.Columns["ID"].ReadOnly = true;
+                comodos.Columns["ID"].SetOrdinal(comodos.Columns.Count - 1);
+                itens.Columns["ID"].SetOrdinal(itens.Columns.Count - 1);
+                comodos.Columns["ID"].ReadOnly = true;
+                itens.Columns["ID"].ReadOnly = true;
 
-				itens.Columns["NOME"].ColumnName = "Nome";
-				itens.Columns["COMPRIMENTO"].ColumnName = "Comprimento";
-				itens.Columns["LARGURA"].ColumnName = "Largura";
-				itens.Columns["COMPRIMENTOESPACAMENTO"].ColumnName = "Comprimento espaçamento";
-				itens.Columns["LARGURAESPACAMENTO"].ColumnName = "Largura espaçamento";
+                itens.Columns["NOME"].ColumnName = "Nome";
+                itens.Columns["COMPRIMENTO"].ColumnName = "Comprimento";
+                itens.Columns["LARGURA"].ColumnName = "Largura";
+                itens.Columns["COMPRIMENTOESPACAMENTO"].ColumnName = "Comprimento espaçamento";
+                itens.Columns["LARGURAESPACAMENTO"].ColumnName = "Largura espaçamento";
 
-				gridComodos.DataSource = comodos;
-				gridItens.DataSource = itens;
+                gridComodos.DataSource = comodos;
+                gridItens.DataSource = itens;
 
-				PreencherDadosResultado();
-			}
-			catch (Exception ex)
-			{
-				throw ex;
-			}
-		}
+                PreencherDadosResultado();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
-		public void PreencherDadosResultado()
-		{
-			var comodoControler = new ComodoController();
-			var itemController = new ItemController();
+        public void PreencherDadosResultado()
+        {
+            var comodoControler = new ComodoController();
+            var itemController = new ItemController();
 
-			listaComodo = comodoControler.ObterListaComodos();
-			listaItem = itemController.ObterListaItens();
+            listaComodo = comodoControler.ObterListaComodos();
+            listaItem = itemController.ObterListaItens();
 
-			_calculo.EfetuarCalculo(listaItem, listaComodo);
-		}
+            _calculo.EfetuarCalculo(listaItem, listaComodo);
 
-		private void gridItens_CellClick(object sender, DataGridViewCellEventArgs e)
-		{
-			var a = gridItens.SelectedRows;
+            DataTable table = new DataTable();
 
-			//var index = this.gridItens.SelectedRows[0].Index;
-		}
+            using (var reader = ObjectReader.Create(_calculo.ValoresPorComodo,
+"Comodo", "Item",
+"QuantidadeXComprimento",
+"QuantidadeYComprimento",
+"RecortesXComprimento",
+"RecortesYComprimento",
+"QuantidadeXLargura",
+"QuantidadeYLargura",
+"RecortesXLargura",
+"RecortesYLargura"))
+            {
+                table.Load(reader);
+            }
 
-		private void gridItens_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-		{
-			atualizarItem();
-			PreencherDadosResultado();
-		}
+            table.Columns["Comodo"].ColumnName = "Comodo";
+            table.Columns["Item"].ColumnName = "Item";
+            table.Columns["QuantidadeXComprimento"].ColumnName = "Qtd C. Comodo / L. Item";
+            table.Columns["QuantidadeYComprimento"].ColumnName = "Qtd C. Comodo / C. Item";
+            table.Columns["RecortesXComprimento"].ColumnName = "Recorte C. Comodo / L. Item";
+            table.Columns["RecortesYComprimento"].ColumnName = "Recorte C. Comodo / C. Item";
+            table.Columns["QuantidadeXLargura"].ColumnName = "Qtd L. Comodo / L. Item";
+            table.Columns["QuantidadeYLargura"].ColumnName = "Qtd L. Comodo / C. Item";
+            table.Columns["RecortesXLargura"].ColumnName = "Recorte L. Comodo / L. Item";
+            table.Columns["RecortesYLargura"].ColumnName = "Recorte L. Comodo / C. Item";
+            
+            gridResultado.DataSource = table;
+        }
 
-		private void gridComodos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-		{
-			atualizarComodo();
-			PreencherDadosResultado();
-		}
+        private void gridItens_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var a = gridItens.SelectedRows;
 
-		public void atualizarComodo()
-		{
-			var comodo = new Comodo();
-			var controller = new ComodoController();
+            //var index = this.gridItens.SelectedRows[0].Index;
+        }
 
-			var index = gridComodos.CurrentCell.RowIndex;
-			var id = gridComodos.Rows[index].Cells["ID"].Value.ToString();
-			var nome = gridComodos.Rows[index].Cells["Nome"].Value.ToString();
-			var largura = gridComodos.Rows[index].Cells["Comprimento"].Value.ToString();
-			var comprimento = gridComodos.Rows[index].Cells["Largura"].Value.ToString();
+        private void gridItens_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            atualizarItem();
+            PreencherDadosResultado();
+        }
 
-			int aux;
-			if (!int.TryParse(id, out aux))
-			{
-				return;
-			}
-			comodo.Id = int.Parse(id);
-			comodo.ValidarCampos(nome, largura, comprimento);
+        private void gridComodos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            atualizarComodo();
+            PreencherDadosResultado();
+        }
 
-			controller.AtualizarComodo(comodo);
-		}
+        public void atualizarComodo()
+        {
+            var comodo = new Comodo();
+            var controller = new ComodoController();
 
-		public void atualizarItem()
-		{
-			var item = new Item();
-			var controller = new ItemController();
+            var index = gridComodos.CurrentCell.RowIndex;
+            var id = gridComodos.Rows[index].Cells["ID"].Value.ToString();
+            var nome = gridComodos.Rows[index].Cells["Nome"].Value.ToString();
+            var largura = gridComodos.Rows[index].Cells["Comprimento"].Value.ToString();
+            var comprimento = gridComodos.Rows[index].Cells["Largura"].Value.ToString();
 
-			var index = gridItens.CurrentCell.RowIndex;
-			var id = gridItens.Rows[index].Cells["ID"].Value.ToString();
-			var nome = gridItens.Rows[index].Cells["Nome"].Value.ToString();
-			var largura = gridItens.Rows[index].Cells["Comprimento"].Value.ToString();
-			var comprimento = gridItens.Rows[index].Cells["Largura"].Value.ToString();
-			var larguraEspacamento = gridItens.Rows[index].Cells["Comprimento espaçamento"].Value.ToString();
-			var comprimentoEspacamento = gridItens.Rows[index].Cells["Largura espaçamento"].Value.ToString();
+            int aux;
+            if (!int.TryParse(id, out aux))
+            {
+                return;
+            }
+            comodo.Id = int.Parse(id);
+            if (comodo.ValidarCampos(nome, largura, comprimento))
+            {
+                controller.AtualizarComodo(comodo);
+            }
+        }
 
-			int aux;
-			if(!int.TryParse(id, out aux))
-			{
-				return;
-			}
-			item.Id = int.Parse(id);
-			item.ValidarCampos(nome, largura, comprimento, larguraEspacamento, comprimentoEspacamento);
+        public void atualizarItem()
+        {
+            var item = new Item();
+            var controller = new ItemController();
 
-			controller.AtualizarItem(item);
-		}
+            var index = gridItens.CurrentCell.RowIndex;
+            var id = gridItens.Rows[index].Cells["ID"].Value.ToString();
+            var nome = gridItens.Rows[index].Cells["Nome"].Value.ToString();
+            var largura = gridItens.Rows[index].Cells["Comprimento"].Value.ToString();
+            var comprimento = gridItens.Rows[index].Cells["Largura"].Value.ToString();
+            var larguraEspacamento = gridItens.Rows[index].Cells["Comprimento espaçamento"].Value.ToString();
+            var comprimentoEspacamento = gridItens.Rows[index].Cells["Largura espaçamento"].Value.ToString();
 
-		private void btnGerarTxt_Click(object sender, EventArgs e)
-		{
+            int aux;
+            if (!int.TryParse(id, out aux))
+            {
+                return;
+            }
+            item.Id = int.Parse(id);
+            if(item.ValidarCampos(nome, largura, comprimento, larguraEspacamento, comprimentoEspacamento))
+            {
+                controller.AtualizarItem(item);
+            }
+        }
 
-		}
+        private void btnGerarTxt_Click(object sender, EventArgs e)
+        {
 
-		private void GerarExcel_Click(object sender, EventArgs e)
-		{
+        }
 
-		}
+        private void GerarExcel_Click(object sender, EventArgs e)
+        {
 
-		private void excluirItem_Click(object sender, EventArgs e)
-		{
-			var controller = new ItemController();
+        }
 
-			var index = gridItens.CurrentCell?.RowIndex ?? null;
-			if (index == null)
-			{
-				return;
-			}
-			var id = gridItens.Rows[(int)index].Cells["ID"].Value.ToString();
+        private void excluirItem_Click(object sender, EventArgs e)
+        {
+            var controller = new ItemController();
 
-			controller.ExcluirItem(int.Parse(id));
+            var index = gridItens.CurrentCell?.RowIndex ?? null;
+            if (index == null)
+            {
+                return;
+            }
+            var id = gridItens.Rows[(int)index].Cells["ID"].Value.ToString();
 
-			CarregarGrids();
-		}
+            controller.ExcluirItem(int.Parse(id));
 
-		private void excluirComodo_Click(object sender, EventArgs e)
-		{
-			var controller = new ComodoController();
+            CarregarGrids();
+        }
 
-			var index = gridComodos.CurrentCell?.RowIndex ?? null;
-			if (index == null)
-			{
-				return;
-			}
-			var id = gridComodos.Rows[(int)index].Cells["ID"].Value.ToString();
+        private void excluirComodo_Click(object sender, EventArgs e)
+        {
+            var controller = new ComodoController();
 
-			controller.ExcluirComodo(int.Parse(id));
+            var index = gridComodos.CurrentCell?.RowIndex ?? null;
+            if (index == null)
+            {
+                return;
+            }
+            var id = gridComodos.Rows[(int)index].Cells["ID"].Value.ToString();
 
-			CarregarGrids();
-		}
-	}
+            controller.ExcluirComodo(int.Parse(id));
+
+            CarregarGrids();
+        }
+    }
 }
