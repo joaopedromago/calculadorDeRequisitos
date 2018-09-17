@@ -20,3 +20,4 @@ A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Release\SRLO
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Release\SRLOCSistema.csproj.CopyComplete
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Release\SRLOCSistema.exe
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Release\SRLOCSistema.pdb
+A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Release\FastMember.dll
