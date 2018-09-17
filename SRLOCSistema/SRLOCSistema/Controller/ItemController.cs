@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SRLOCSistema.Dto;
 using SRLOCSistema.Model;
+using SRLOCSistema.Model.Enum;
 
 namespace SRLOCSistema.Controller
 {
@@ -19,9 +20,9 @@ namespace SRLOCSistema.Controller
 				var query = new StringBuilder();
 
 				query.AppendLine($"INSERT INTO ITENS ");
-				query.AppendLine($"(NOME ,LARGURA ,COMPRIMENTO ,LARGURAESPACAMENTO ,COMPRIMENTOESPACAMENTO, DATACRIACAO)");
+				query.AppendLine($"(NOME ,LARGURA ,COMPRIMENTO ,LARGURAESPACAMENTO ,COMPRIMENTOESPACAMENTO ,TIPOCALCULO , DATACRIACAO)");
 				query.AppendLine($"VALUES");
-				query.AppendLine($"('{item.Nome}', '{item.Largura}', '{item.Comprimento}', '{item.LarguraEspacamento}', '{item.ComprimentoEspacamento}', '{DateTime.Now:s}')");
+				query.AppendLine($"('{item.Nome}', '{item.Largura}', '{item.Comprimento}', '{item.LarguraEspacamento}', '{item.ComprimentoEspacamento}', '{(int)item.TipoCalculo}', '{DateTime.Now:s}')");
 
 				dbContext.ExecuteQuery(query.ToString());
 			}
@@ -43,7 +44,8 @@ namespace SRLOCSistema.Controller
 				query.AppendLine($"LARGURA = '{item.Largura}',");
 				query.AppendLine($"COMPRIMENTO = '{item.Comprimento}',");
 				query.AppendLine($"LARGURAESPACAMENTO = '{item.LarguraEspacamento}',");
-				query.AppendLine($"COMPRIMENTOESPACAMENTO = '{item.ComprimentoEspacamento}'");
+				query.AppendLine($"COMPRIMENTOESPACAMENTO = '{item.ComprimentoEspacamento}',");
+				query.AppendLine($"TIPOCALCULO = '{(int)item.TipoCalculo}'");
 				query.AppendLine($"WHERE ID = {item.Id}");
 
 				dbContext.ExecuteQuery(query.ToString());
@@ -140,6 +142,7 @@ namespace SRLOCSistema.Controller
 							 Largura = Convert.ToDouble(rw["LARGURA"]),
 							 Comprimento = Convert.ToDouble(rw["COMPRIMENTO"]),
 							 LarguraEspacamento = Convert.ToDouble(rw["LARGURAESPACAMENTO"]),
+							 TipoCalculo = (TipoCalculo)Enum.ToObject(typeof(TipoCalculo), Convert.ToInt32(rw["TIPOCALCULO"])),
 							 //ComprimentoEspacamento = Convert.ToDouble(rw["COMPRIMENTOESPACAMENTO"])
 						 }).ToList();
 

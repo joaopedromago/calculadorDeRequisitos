@@ -41,4 +41,3 @@ A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCS
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.csproj.CopyComplete
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.exe
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.pdb
-A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.csprojAssemblyReference.cache

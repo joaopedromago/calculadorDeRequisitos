@@ -71,6 +71,8 @@
     <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Model\Calculo.cs" />
     <Compile Include="Model\Comodo.cs" />
+    <Compile Include="Model\Enum\Posicao.cs" />
+    <Compile Include="Model\Enum\TipoCalculo.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="View\CadastroComodo.cs">
       <SubType>Form</SubType>

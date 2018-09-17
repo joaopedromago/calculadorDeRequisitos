@@ -1,5 +1,6 @@
 ﻿using SRLOCSistema.Controller;
 using SRLOCSistema.Model;
+using SRLOCSistema.Model.Enum;
 using SRLOCSistema.View;
 using System;
 using System.Collections.Generic;
@@ -78,6 +79,7 @@ namespace SRLOCSistema
 				itens.Columns["LARGURA"].ColumnName = "Largura";
 				itens.Columns["COMPRIMENTOESPACAMENTO"].ColumnName = "Comprimento espaçamento";
 				itens.Columns["LARGURAESPACAMENTO"].ColumnName = "Largura espaçamento";
+				itens.Columns["TIPOCALCULO"].ColumnName = "Tipo de Cálculo";
 
 				gridComodos.DataSource = comodos;
 				gridItens.DataSource = itens;
@@ -154,6 +156,7 @@ namespace SRLOCSistema
 			var comprimento = gridItens.Rows[index].Cells["Largura"].Value.ToString();
 			var larguraEspacamento = gridItens.Rows[index].Cells["Comprimento espaçamento"].Value.ToString();
 			var comprimentoEspacamento = gridItens.Rows[index].Cells["Largura espaçamento"].Value.ToString();
+			var tipoCalculo = gridItens.Rows[index].Cells["Tipo de Cálculo"].Value.ToString();
 
 			int aux;
 			if(!int.TryParse(id, out aux))
@@ -161,7 +164,7 @@ namespace SRLOCSistema
 				return;
 			}
 			item.Id = int.Parse(id);
-			item.ValidarCampos(nome, largura, comprimento, larguraEspacamento, comprimentoEspacamento);
+			item.ValidarCampos(nome, largura, comprimento, larguraEspacamento, comprimentoEspacamento, tipoCalculo);
 
 			controller.AtualizarItem(item);
 		}

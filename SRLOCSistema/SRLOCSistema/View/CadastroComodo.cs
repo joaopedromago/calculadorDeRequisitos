@@ -29,6 +29,8 @@ namespace SRLOCSistema.View
 			comodo.ValidarCampos(txtNome.Text, numLargura.Text, numComprimento.Text);
 
 			comodoController.CadastrarComodo(comodo);
+
+			this.Close();
 		}
 
 		private void numComprimento_KeyPress(object sender, KeyPressEventArgs e)

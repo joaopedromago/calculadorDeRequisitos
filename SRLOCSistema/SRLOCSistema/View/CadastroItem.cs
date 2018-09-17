@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using SRLOCSistema.Model;
 using SRLOCSistema.Controller;
 using SRLOCSistema.Bll;
+using SRLOCSistema.Model.Enum;
 
 namespace SRLOCSistema.View
 {
@@ -26,7 +27,7 @@ namespace SRLOCSistema.View
 
 			var itemController = new ItemController();
 
-			item.ValidarCampos(txtNome.Text, numLargura.Text, numComprimento.Text, numLarguraEspacamento.Text, numComprimentoEspacamento.Text);
+			item.ValidarCampos(txtNome.Text, numLargura.Text, numComprimento.Text, numLarguraEspacamento.Text, numComprimentoEspacamento.Text, ObterTipoCalculo());
 
 			itemController.CadastrarItem(item);
 
@@ -68,6 +69,18 @@ namespace SRLOCSistema.View
 		private void button1_Click(object sender, EventArgs e)
 		{
 			this.Close();
+		}
+
+		private TipoCalculo ObterTipoCalculo()
+		{
+			if (rdbTipoCalculoArea.Checked)
+			{
+				return TipoCalculo.Area;
+			}
+			else
+			{
+				return TipoCalculo.Quantidade;
+			}
 		}
 	}
 }

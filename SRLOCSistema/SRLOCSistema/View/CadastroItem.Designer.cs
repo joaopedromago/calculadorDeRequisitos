@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.button1 = new System.Windows.Forms.Button();
 			this.CadastrarItem = new System.Windows.Forms.Button();
 			this.lblNome = new System.Windows.Forms.Label();
 			this.txtNome = new System.Windows.Forms.TextBox();
@@ -40,7 +41,9 @@
 			this.numComprimentoEspacamento = new System.Windows.Forms.TextBox();
 			this.numLargura = new System.Windows.Forms.TextBox();
 			this.numComprimento = new System.Windows.Forms.TextBox();
-			this.button1 = new System.Windows.Forms.Button();
+			this.rdbTipoCalculoArea = new System.Windows.Forms.RadioButton();
+			this.rdbTipoCalculoQtd = new System.Windows.Forms.RadioButton();
+			this.label4 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -54,6 +57,20 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(470, 100);
 			this.panel1.TabIndex = 11;
+			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.LightCoral;
+			this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.button1.Location = new System.Drawing.Point(332, 41);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(122, 45);
+			this.button1.TabIndex = 39;
+			this.button1.Text = "Cancelar";
+			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// CadastrarItem
 			// 
@@ -172,25 +189,46 @@
 			this.numComprimento.Text = "0";
 			this.numComprimento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numComprimento_KeyPress);
 			// 
-			// button1
+			// rdbTipoCalculoArea
 			// 
-			this.button1.BackColor = System.Drawing.Color.LightCoral;
-			this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.button1.Location = new System.Drawing.Point(332, 41);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(122, 45);
-			this.button1.TabIndex = 39;
-			this.button1.Text = "Cancelar";
-			this.button1.UseVisualStyleBackColor = false;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.rdbTipoCalculoArea.AutoSize = true;
+			this.rdbTipoCalculoArea.Checked = true;
+			this.rdbTipoCalculoArea.Location = new System.Drawing.Point(16, 254);
+			this.rdbTipoCalculoArea.Name = "rdbTipoCalculoArea";
+			this.rdbTipoCalculoArea.Size = new System.Drawing.Size(154, 17);
+			this.rdbTipoCalculoArea.TabIndex = 39;
+			this.rdbTipoCalculoArea.TabStop = true;
+			this.rdbTipoCalculoArea.Text = "Área (Ideal para Madeirites)";
+			this.rdbTipoCalculoArea.UseVisualStyleBackColor = true;
+			// 
+			// rdbTipoCalculoQtd
+			// 
+			this.rdbTipoCalculoQtd.AutoSize = true;
+			this.rdbTipoCalculoQtd.Location = new System.Drawing.Point(16, 277);
+			this.rdbTipoCalculoQtd.Name = "rdbTipoCalculoQtd";
+			this.rdbTipoCalculoQtd.Size = new System.Drawing.Size(211, 17);
+			this.rdbTipoCalculoQtd.TabIndex = 40;
+			this.rdbTipoCalculoQtd.Text = "Quantidade (Ideal para chapa metálica)";
+			this.rdbTipoCalculoQtd.UseVisualStyleBackColor = true;
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.Location = new System.Drawing.Point(12, 227);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(228, 24);
+			this.label4.TabIndex = 41;
+			this.label4.Text = "Tipo de Cálculo a ser feito";
 			// 
 			// CadastroItem
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(502, 473);
+			this.Controls.Add(this.label4);
+			this.Controls.Add(this.rdbTipoCalculoQtd);
+			this.Controls.Add(this.rdbTipoCalculoArea);
 			this.Controls.Add(this.numLargura);
 			this.Controls.Add(this.numComprimento);
 			this.Controls.Add(this.numLarguraEspacamento);
@@ -228,5 +266,8 @@
 		private System.Windows.Forms.TextBox numLargura;
 		private System.Windows.Forms.TextBox numComprimento;
 		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.RadioButton rdbTipoCalculoArea;
+		private System.Windows.Forms.RadioButton rdbTipoCalculoQtd;
+		private System.Windows.Forms.Label label4;
 	}
 }
