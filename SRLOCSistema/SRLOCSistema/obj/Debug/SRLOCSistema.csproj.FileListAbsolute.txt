@@ -1,30 +1,9 @@
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\SRLOCSistema.exe.config
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\SRLOCSistema.exe
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\SRLOCSistema.pdb
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.csprojAssemblyReference.cache
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.SRLOC.resources
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.Properties.Resources.resources
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.csproj.GenerateResource.cache
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.csproj.CoreCompileInputs.cache
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.exe
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.pdb
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\EntityFramework.dll
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\EntityFramework.SqlServer.dll
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\System.Data.SQLite.dll
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\System.Data.SQLite.EF6.dll
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\System.Data.SQLite.Linq.dll
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\EntityFramework.xml
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\EntityFramework.SqlServer.xml
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\System.Data.SQLite.xml
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\System.Data.SQLite.dll.config
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.View.CadastroComodo.resources
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.View.CadastroItem.resources
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.csproj.CopyComplete
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\SRLOCSistema.exe.config
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\SRLOCSistema.exe
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\SRLOCSistema.pdb
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\EntityFramework.dll
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\EntityFramework.SqlServer.dll
+A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\FastMember.dll
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\System.Data.SQLite.dll
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\System.Data.SQLite.EF6.dll
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\System.Data.SQLite.Linq.dll
@@ -32,6 +11,7 @@ A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\Entity
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\EntityFramework.SqlServer.xml
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\System.Data.SQLite.xml
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\System.Data.SQLite.dll.config
+A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.csprojAssemblyReference.cache
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.View.CadastroComodo.resources
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.View.CadastroItem.resources
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.SRLOC.resources
@@ -41,9 +21,3 @@ A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCS
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.csproj.CopyComplete
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.exe
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.pdb
-<<<<<<< HEAD
-=======
-A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.csprojAssemblyReference.cache
-D:\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\FastMember.dll
->>>>>>> cf29e20c9e8ed6b65a29e1d95980285727f5b0a9
-A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\FastMember.dll
