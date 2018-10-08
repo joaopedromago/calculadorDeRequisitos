@@ -1,4 +1,9 @@
+A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\x86\sqlite3.dll
+A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\x64\sqlite3.dll
+A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\Db\database.db
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\SRLOCSistema.exe.config
+A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\SRLOCSistema.exe.manifest
+A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\SRLOCSistema.application
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\SRLOCSistema.exe
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\SRLOCSistema.pdb
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\EntityFramework.dll
@@ -11,13 +16,15 @@ A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\Entity
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\EntityFramework.SqlServer.xml
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\System.Data.SQLite.xml
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\bin\Debug\System.Data.SQLite.dll.config
-A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.csprojAssemblyReference.cache
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.View.CadastroComodo.resources
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.View.CadastroItem.resources
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.SRLOC.resources
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.Properties.Resources.resources
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.csproj.GenerateResource.cache
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.csproj.CoreCompileInputs.cache
+A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.exe.manifest
+A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.application
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.csproj.CopyComplete
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.exe
 A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.pdb
+A:\Development\calculadorDeRequisitos\SRLOCSistema\SRLOCSistema\obj\Debug\SRLOCSistema.csprojAssemblyReference.cache

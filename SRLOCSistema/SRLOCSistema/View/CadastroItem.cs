@@ -77,9 +77,12 @@ namespace SRLOCSistema.View
 			{
 				return TipoCalculo.Area;
 			}
-			else
+			else if (rdbTipoCalculoQtd.Checked)
 			{
 				return TipoCalculo.Quantidade;
+			} else
+			{
+				return TipoCalculo.SentidoUnico;
 			}
 		}
 	}

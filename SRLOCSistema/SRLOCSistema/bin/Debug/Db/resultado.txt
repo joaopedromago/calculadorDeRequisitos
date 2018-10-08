@@ -1,0 +1,19 @@
+Comodo: Quarto (900000x900000)
+Item: Madeirite
+Quantidade total de Madeirite inteiros: 334562 (409x818)
+Recortes da parte superior: 409 peças: 200x2200 + complementar: 200x200
+Recortes do lado: 409 peças: 200x2200 + complementar: 200x200
+
+Item: Escoramento metálico
+Quantidade total de Escoramento metálico inteiros: 2314800 (1286x1800)
+
+Item: Barrote de eucalipto
+Quantidade total de Barrote de eucalipto inteiros: 245400 (818x300)
+
+
+
+
+peças: 1000x1100
+
+
+

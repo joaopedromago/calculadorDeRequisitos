@@ -8,9 +8,7 @@ namespace SRLOCSistema.Model.Enum
 {
 	public enum Posicao
 	{
-		Superior,
-		Inferior,
-		Esquerda,
-		Direita
+		Largura,
+		Comprimento
 	}
 }

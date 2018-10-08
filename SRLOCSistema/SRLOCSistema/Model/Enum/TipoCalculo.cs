@@ -8,7 +8,8 @@ namespace SRLOCSistema.Model.Enum
 {
 	public enum TipoCalculo : int
 	{
-		Area = 1,
-		Quantidade = 2
+		Area = 0,
+		Quantidade = 1,
+		SentidoUnico = 2
 	}
 }

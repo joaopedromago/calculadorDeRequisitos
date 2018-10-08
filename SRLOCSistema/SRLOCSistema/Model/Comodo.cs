@@ -13,6 +13,15 @@ namespace SRLOCSistema.Model
 		public double Largura { get; set; }
 		public double Comprimento { get; set; }
 
+
+		public void InverterComprimentoLargura()
+		{
+			double aux1;
+			aux1 = Largura;
+			Largura = Comprimento;
+			Comprimento = aux1;
+		}
+
 		public bool ValidarCampos(string nome, string largura, string comprimento)
 		{
 			if (string.IsNullOrEmpty(nome))
